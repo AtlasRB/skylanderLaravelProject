@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function collectables()
+    {
+        return $this->belongsToMany(Collectable::class, 'user_collectable');
+    }
 }
