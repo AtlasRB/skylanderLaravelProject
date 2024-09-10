@@ -19,8 +19,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    Route::match(['get', 'post'], '/collectables', [CollectableController::class, 'index'])->name('collectables.index');
     Route::get('/collectables', [CollectableController::class, 'index'])->name('collectables.index');
     Route::post('/collectables/{collectable}/toggle', [CollectableController::class, 'toggleCollectable'])->name('collectables.toggle');
 });
+
 
 require __DIR__.'/auth.php';

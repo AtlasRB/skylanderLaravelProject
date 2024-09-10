@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('collectables', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('type');
-            $table->timestamps();
+        Schema::table('collectables', function (Blueprint $table) {
+            $table->string('type')->nullable();  // Add the 'type' column, nullable or not based on your requirements
         });
     }
 
@@ -24,6 +21,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('collectables');
+        Schema::table('collectables', function (Blueprint $table) {
+            //
+            $table->dropColumn('type');
+        });
     }
 };

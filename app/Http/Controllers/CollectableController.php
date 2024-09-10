@@ -11,8 +11,26 @@ use Illuminate\View\View;
 
 class CollectableController extends Controller
 {
-    public function index(): View
+    public function index(Request $request)
     {
+        // If the request method is POST, handle form submission
+        if ($request->isMethod('post')) {
+            // Validate the incoming request data
+            $validatedData = $request->validate([
+                'name' => 'required|string|max:255',
+                'type' => 'required|string|in:Common,Rare,Legendary',
+            ]);
+
+            // Create a new Collectable record
+            Collectable::create([
+                'name' => $validatedData['name'],
+                'type' => $validatedData['type'],
+            ]);
+
+            // Redirect back with a success message
+            return redirect()->route('collectables.index')->with('success', 'Collectable added successfully.');
+        }
+
         $collectables = Collectable::all();
         $userCollectables = Auth::user()->collectables->pluck('id')->toArray();
 
@@ -31,4 +49,5 @@ class CollectableController extends Controller
 
         return redirect()->route('collectables.index');
     }
+
 }
