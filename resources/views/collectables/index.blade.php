@@ -47,6 +47,7 @@
         </div>
 
         <!-- Form to add a new collectable -->
+        @if (auth()->user()->is_admin)
         <div class="text-center">
             <h3>Add New Collectable</h3>
 
@@ -89,5 +90,6 @@
                 <button type="submit" class="btn btn-primary">Add Collectable</button>
             </form>
         </div>
+        @endif
     </div>
 </x-app-layout>
