@@ -14,6 +14,9 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: {
+                'faded-full-faded': 'linear-gradient(to right, transparent, rgba(255,255,255,0.8) 20%, rgba(255,255,255,0.6) 80%, transparent)',
+            }
         },
     },
 
