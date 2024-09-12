@@ -1,14 +1,14 @@
 <x-app-layout>
     <div class="text-center flex flex-col items-center"  style="background-image: url('{{ asset('images/skylandersBackground.webp') }}'); background-size: 82%;">
-        <div class="px-10 pb-10 bg-faded-full-faded flex flex-col items-center">
+        <div class="px-4 md:px-10 pb-10 bg-faded-full-faded flex flex-col items-center">
             <h1 class="text-7xl my-8 font-bold">Collectables</h1>
             <!-- Adventure Characters table -->
             <h2 class="text-5xl mb-5 font-bold">Adventure Characters</h2>
-            <table class="mx-4 md:mx-0 bg-white bg-opacity-30 text-3xl">
+            <table class="bg-white bg-opacity-30 text-xl md:text-3xl">
                 <thead>
                 <tr>
-                    <th class="w-72 border border-black">Name</th>
-                    <th class="w-72 border border-black">In collection</th>
+                    <th class="w-96 border border-black">Name</th>
+                    <th class="w-96 border border-black">In collection</th>
                 </tr>
                 </thead>
                 @foreach ($collectables as $collectable)
@@ -38,11 +38,11 @@
 
             <!-- Magic Items and Level Pieces table -->
             <h2 class="text-5xl mb-5 mt-10 font-bold">Magic Items and Level Pieces</h2>
-            <table class="mx-4 md:mx-0 bg-white bg-opacity-30 text-3xl">
+            <table class="bg-white bg-opacity-30 text-xl md:text-3xl">
                 <thead>
                 <tr>
-                    <th class="w-72 border border-black">Name</th>
-                    <th class="w-72 border border-black">In collection</th>
+                    <th class="w-96 border border-black">Name</th>
+                    <th class="w-96 border border-black">In collection</th>
                 </tr>
                 </thead>
                 @foreach ($collectables as $collectable)
@@ -72,11 +72,11 @@
 
             <!-- In-Game Variants table -->
             <h2 class="text-5xl mb-5 mt-10 font-bold">In-Game Variants</h2>
-            <table class="mx-4 md:mx-0 bg-white bg-opacity-30 text-3xl">
+            <table class="bg-white bg-opacity-30 text-xl md:text-3xl">
                 <thead>
                 <tr>
-                    <th class="w-72 border border-black">Name</th>
-                    <th class="w-72 border border-black">In collection</th>
+                    <th class="w-96 border border-black">Name</th>
+                    <th class="w-96 border border-black">In collection</th>
                 </tr>
                 </thead>
                 @foreach ($collectables as $collectable)

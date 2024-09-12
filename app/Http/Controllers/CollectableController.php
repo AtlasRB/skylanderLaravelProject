@@ -31,10 +31,11 @@ class CollectableController extends Controller
             }
         }
 
-        $collectables = Collectable::all();
+        $collectables = Collectable::orderBy('name', 'asc')->get();
         $userCollectables = Auth::user()->collectables->pluck('id')->toArray();
+        $user = auth()->user();
 
-        return view('collectables.index', compact('collectables', 'userCollectables'));
+        return view('collectables.index', compact('collectables', 'userCollectables', 'user'));
     }
 
     public function toggleCollectable(Collectable $collectable)

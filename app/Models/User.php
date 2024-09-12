@@ -49,4 +49,27 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Collectable::class, 'user_collectable');
     }
+
+    public function totalCollectables()
+    {
+        return $this->collectables()->count();
+    }
+
+    // Method to get total number of adventure collectables
+    public function totalAdventures()
+    {
+        return $this->collectables()->where('type', 'adventure')->count();
+    }
+
+    // Method to get total number of magic collectables
+    public function totalMagic()
+    {
+        return $this->collectables()->where('type', 'magic')->count();
+    }
+
+    // Method to get total number of variant collectables
+    public function totalVariants()
+    {
+        return $this->collectables()->where('type', 'variant')->count();
+    }
 }
