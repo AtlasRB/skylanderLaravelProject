@@ -107,6 +107,43 @@
                 @endforeach
             </table>
 
+            <!-- In-Game Variants table -->
+            <h2 class="mb-5 mt-10 font-bold text-3xl md:text-5xl">Eons Elite Figures</h2>
+            <table class="bg-white bg-opacity-30 text-xl md:text-3xl">
+                <thead>
+                <tr>
+                    <th class="w-96 border border-black">Name</th>
+                    <th class="w-96 border border-black">In collection</th>
+                </tr>
+                </thead>
+                @foreach ($collectables as $collectable)
+                    <tbody>
+                    @if ($collectable->type == 'elite')
+                        <tr>
+                            {{-- This outputs the collectable name in the table --}}
+                            <td class="text-left border border-black pl-8">{{ $collectable->name }}</td>
+
+                            {{-- This displays if the item is in the users collection --}}
+                            @if (in_array($collectable->id, $userCollectables))
+                                <td class="bg-green-500 relative border border-black"><form action="{{ route('collectables.toggle', $collectable) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger text-transparent absolute inset-0 w-full h-full"></button>
+                                    </form></td>
+                            @else
+                                <td class="bg-red-500 relative border border-black"><form action="{{ route('collectables.toggle', $collectable) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger text-transparent absolute inset-0 w-full h-full"></button>
+                                    </form></td>
+                            @endif
+
+                            {{-- This adds the option for the collectable to be in the users collection --}}
+
+                        </tr>
+                    @endif
+                    </tbody>
+                @endforeach
+            </table>
+
 
             <!-- Form to add a new collectable -->
             @if (auth()->user()->is_admin)
@@ -146,6 +183,7 @@
                                 <option value="adventure">Adventure Character</option>
                                 <option value="magic">Magic Items and Level Pieces</option>
                                 <option value="variant">In-Game Variant</option>
+                                <option value="elite">Eons Elites</option>
                             </select>
                         </div>
 

@@ -19,7 +19,7 @@ class CollectableController extends Controller
                 // Validate the incoming request data
                 $validatedData = $request->validate([
                     'name' => 'required|string|max:255',
-                    'type' => 'required|string|in:adventure,magic,variant',
+                    'type' => 'required|string|in:adventure,magic,variant,elite',
                 ]);
 
                 Collectable::create([
