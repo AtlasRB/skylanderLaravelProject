@@ -1,9 +1,9 @@
 <x-app-layout>
     <div class="text-center flex flex-col items-center"  style="background-image: url('{{ asset('images/skylandersBackground.webp') }}'); background-size: 82%;">
         <div class="px-4 md:px-10 pb-10 bg-faded-full-faded flex flex-col items-center">
-            <h1 class="text-7xl my-8 font-bold">Collectables</h1>
+            <h1 class="text-5xl md:text-7xl my-8 font-bold">Collectables</h1>
             <!-- Adventure Characters table -->
-            <h2 class="text-5xl mb-5 font-bold">Adventure Characters</h2>
+            <h2 class="text-3xl md:text-5xl mb-5 font-bold">Adventure Characters</h2>
             <table class="bg-white bg-opacity-30 text-xl md:text-3xl">
                 <thead>
                 <tr>
@@ -37,7 +37,7 @@
             </table>
 
             <!-- Magic Items and Level Pieces table -->
-            <h2 class="text-5xl mb-5 mt-10 font-bold">Magic Items and Level Pieces</h2>
+            <h2 class="text-3xl md:text-5xl mb-5 mt-10 font-bold">Magic Items and Level Pieces</h2>
             <table class="bg-white bg-opacity-30 text-xl md:text-3xl">
                 <thead>
                 <tr>
@@ -71,7 +71,7 @@
             </table>
 
             <!-- In-Game Variants table -->
-            <h2 class="text-5xl mb-5 mt-10 font-bold">In-Game Variants</h2>
+            <h2 class="mb-5 mt-10 font-bold text-3xl md:text-5xl">In-Game Variants</h2>
             <table class="bg-white bg-opacity-30 text-xl md:text-3xl">
                 <thead>
                 <tr>

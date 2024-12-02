@@ -7,6 +7,15 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './resources/views/**/*.js',
+        './resources/views/**/*.vue',
+    ],
+
+    safelist: [
+        'text-5xl',
+        'md:text-5xl',
+        'lg:text-5xl',
+        'xl:text-5xl',
     ],
 
     theme: {
